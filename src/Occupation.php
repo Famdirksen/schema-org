@@ -10,6 +10,7 @@ use \Spatie\SchemaOrg\Contracts\ThingContract;
  *
  * @see http://schema.org/Occupation
  *
+ * @method static skills($skills) The value should be instance of pending types DefinedTerm|DefinedTerm[]|string|string[]
  */
 class Occupation extends BaseType implements IntangibleContract, ThingContract
 {
@@ -282,20 +283,6 @@ class Occupation extends BaseType implements IntangibleContract, ThingContract
     public function sameAs($sameAs)
     {
         return $this->setProperty('sameAs', $sameAs);
-    }
-
-    /**
-     * Skills required to fulfill this role or in this Occupation.
-     *
-     * @param string|string[] $skills
-     *
-     * @return static
-     *
-     * @see http://schema.org/skills
-     */
-    public function skills($skills)
-    {
-        return $this->setProperty('skills', $skills);
     }
 
     /**
